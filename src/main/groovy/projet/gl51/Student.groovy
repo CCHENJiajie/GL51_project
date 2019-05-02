@@ -1,11 +1,10 @@
 package projet.gl51
 
-public class Student{
-	String firstname
-	String lastname
+class Student {
+    String firstName
+    String lastName
 
-	@Override
-	String toString() {
-		return super.toString()
-	}
+    String toString() {
+        "$firstName - $lastName"
+    }
 }

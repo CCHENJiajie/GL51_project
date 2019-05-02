@@ -13,8 +13,7 @@ import spock.lang.Specification
 
 class StudentControllerSpec extends Specification {
 
-    @Shared @AutoCleanup EmbeddedServer embeddedServer = ApplicationContext.run(EmbeddedServer)
-    @Shared @AutoCleanup RxHttpClient client = embeddedServer.applicationContext.createBean(RxHttpClient, embeddedServer.getURL())
+  
 
 
     void "test index"() {
@@ -23,7 +22,7 @@ class StudentControllerSpec extends Specification {
 
         expect:
         response.status == HttpStatus.OK
-        response.body()[0].firstName == 'Sébastien'
+        response.body()[0].firstName == 'SÃ©bastien'
         response.body()[0].lastName == 'Gadot'
 
     }

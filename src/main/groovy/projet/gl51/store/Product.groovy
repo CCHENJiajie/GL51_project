@@ -2,7 +2,7 @@ package projet.gl51.store
 
 class Product {
 
-    String id
+    Integer id
     String name
     String description
 

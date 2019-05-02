@@ -14,7 +14,7 @@ class MemoryProductStorage implements  ProductStorage {
     }
 
     @Override
-    void update(String id, Product p) {
+    void update(Integer id, Product p) {
         Product product = this.getByID(id)
         int indexOfProduct = products.indexOf(product)
 
@@ -22,7 +22,7 @@ class MemoryProductStorage implements  ProductStorage {
     }
 
     @Override
-    Product getByID(String id) {
+    Product getByID(Integer id) {
         def product = productList.find { it.id == id }
         if(product == null)
         {
@@ -32,7 +32,7 @@ class MemoryProductStorage implements  ProductStorage {
     }
 
     @Override
-    void delete(String id) {
+    void delete(Integer id) {
         def product = getByID(id)
         productList.remove(product)
     }

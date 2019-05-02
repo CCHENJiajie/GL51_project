@@ -6,6 +6,7 @@ import io.micronaut.runtime.server.EmbeddedServer
 import io.micronaut.http.client.RxHttpClient
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.HttpStatus
+
 import spock.lang.AutoCleanup
 import spock.lang.Shared
 import spock.lang.Specification
@@ -13,7 +14,6 @@ import spock.lang.Specification
 class StudentControllerSpec extends Specification {
 
     @Shared @AutoCleanup EmbeddedServer embeddedServer = ApplicationContext.run(EmbeddedServer)
-
     @Shared @AutoCleanup RxHttpClient client = embeddedServer.applicationContext.createBean(RxHttpClient, embeddedServer.getURL())
 
     void "test index"() {
@@ -26,8 +26,8 @@ class StudentControllerSpec extends Specification {
 
         response.status == HttpStatus.OK
 
-        response.body()[1].firstName == 'jiajie'
-        response.body()[1].lastName == 'sicong'
+        response.body()[1].firstName == "jiajie"
+        response.body()[1].lastName == "sicong"
         println(response.body)
 
     }

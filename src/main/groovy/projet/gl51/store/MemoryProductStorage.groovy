@@ -16,9 +16,9 @@ class MemoryProductStorage implements  ProductStorage {
     @Override
     void update(Integer id, Product p) {
         Product product = this.getByID(id)
-        int indexOfProduct = products.indexOf(product)
+        int indexOfProduct = productList.indexOf(product)
 
-         products.add(indexOfProduct,p)
+         productList.add(indexOfProduct,p)
     }
 
     @Override

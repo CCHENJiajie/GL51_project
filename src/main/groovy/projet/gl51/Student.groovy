@@ -1,4 +1,4 @@
-package projet.gl51;
+package projet.gl51
 
 public class Student {
 	String firstName

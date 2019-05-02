@@ -1,4 +1,4 @@
-package projet.gl51.Store
+package projet.gl51.store
 
  class NotExistingProductException extends Exception {
     NotExistingProductException(){

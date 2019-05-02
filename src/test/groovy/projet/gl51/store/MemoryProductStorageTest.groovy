@@ -1,4 +1,4 @@
-package gl51.project.store
+package projet.gl51.store
 
 import spock.lang.Specification
 

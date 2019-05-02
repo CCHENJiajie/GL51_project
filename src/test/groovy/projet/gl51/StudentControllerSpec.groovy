@@ -7,7 +7,6 @@ import io.micronaut.runtime.server.EmbeddedServer
 import io.micronaut.http.client.RxHttpClient
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.HttpStatus
-
 import spock.lang.AutoCleanup
 import spock.lang.Shared
 import spock.lang.Specification
@@ -21,11 +20,11 @@ class StudentControllerSpec extends Specification {
     void "test index"() {
         given:
         def response = client.toBlocking().exchange("/student", Argument.listOf(Student).type)
+
         expect:
         response.status == HttpStatus.OK
-        response.body()[1].firstname == "CHEN"
-        response.body()[1].lastname == "JIAJIE"
-        println(response.body)
+        response.body()[0].firstName == 'Sébastien'
+        response.body()[0].lastName == 'Gadot'
 
     }
 }

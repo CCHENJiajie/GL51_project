@@ -57,6 +57,7 @@ class MemoryProductStorageTest extends Specification {
 
          when:
         Product myUpdatedProduct = new Product(name: "myUpdatedProduct")
+        println(id);
         store.update(id, myUpdatedProduct)
 
          then:

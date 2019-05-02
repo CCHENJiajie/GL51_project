@@ -1,5 +1,10 @@
 package projet.gl51.store
 
+import io.micronaut.context.ApplicationContext
+import io.micronaut.runtime.server.EmbeddedServer
+import io.micronaut.http.client.RxHttpClient
+import spock.lang.AutoCleanup
+import spock.lang.Shared
 import spock.lang.Specification
 
 class MemoryProductStorageTest extends Specification {

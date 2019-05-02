@@ -26,12 +26,9 @@ class StudentControllerSpec extends Specification {
 
         response.status == HttpStatus.OK
 
-        response.body()[0].firstName == 'jiajie1'
-        response.body()[0].lastName == 'sicong1'
-        response.body()[1].firstName == 'jiajie2'
-        response.body()[1].lastName == 'sicong2'
-        response.body()[2].firstName == 'jiajie3'
-		response.body()[2].lastName == 'sicong3'
+        response.body()[1].firstName == 'jiajie'
+        response.body()[1].lastName == 'sicong'
+        println(response.body)
 
     }
 

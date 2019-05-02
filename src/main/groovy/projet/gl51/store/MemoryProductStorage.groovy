@@ -6,10 +6,11 @@ class MemoryProductStorage implements  ProductStorage {
 	Integer id = 1
 	
     @Override
-    void save(Product p) {
+    Integer save(Product p) {
 		p.id = id
         productList.add(p)
 		id += 1
+    	return p.id
     }
 
     @Override

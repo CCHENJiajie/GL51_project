@@ -6,11 +6,10 @@ import io.micronaut.http.HttpStatus
 
 
 @Controller("/student")
-
 class StudentController {
 
     @Get("/")
     List<Student> index() {
-        [new Student (firstname: "huang", lastname:"Sicong"), new Student (firstname: "Chen", lastname:"Jiajie")]
+        [new Student(firstName: "Sébastien", lastName: "Gadot")]
     }
 }

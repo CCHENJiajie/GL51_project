@@ -13,7 +13,8 @@ import spock.lang.Specification
 
 class StudentControllerSpec extends Specification {
 
-  
+    @Shared @AutoCleanup EmbeddedServer embeddedServer = ApplicationContext.run(EmbeddedServer)
+    @Shared @AutoCleanup RxHttpClient client = embeddedServer.applicationContext.createBean(RxHttpClient, embeddedServer.getURL())
 
 
     void "test index"() {

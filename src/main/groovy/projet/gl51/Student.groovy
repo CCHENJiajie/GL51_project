@@ -4,7 +4,6 @@ public class Student {
 	String firstName
 	String lastName
 	
-	@override
 	String toString() {
 		'firstName - lastName'
 	}

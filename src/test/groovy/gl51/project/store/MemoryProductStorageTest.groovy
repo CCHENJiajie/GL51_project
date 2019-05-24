@@ -31,20 +31,20 @@ class MemoryProductStorageTest extends Specification {
      def "check if saving takes effect"() {
         setup:
         Product myProduct = new Product(name: "myProduct")
-        def id = store.save(myProduct)
+        def uuid = store.save(myProduct)
 
          expect:
         myProduct.id != null
-        myProduct.id == id
+        myProduct.id == uuid
     }
 
      def "check if deleting takes effect"() {
         setup:
         Product myProduct = new Product(name: "myProduct")
-        def id = store.save(myProduct)
+        def uuid = store.save(myProduct)
 
          when:
-        store.delete(id)
+        store.delete(uuid)
 
          then:
         !store.all().contains(myProduct)
@@ -53,11 +53,10 @@ class MemoryProductStorageTest extends Specification {
      def "check if updating takes effect"() {
         setup:
         Product myProduct = new Product(name: "myProduct")
-        def id = store.save(myProduct)
+        def uuid = store.save(myProduct)
 
          when:
         Product myUpdatedProduct = new Product(name: "myUpdatedProduct")
-        println(id);
         store.update(id, myUpdatedProduct)
 
          then:
@@ -66,13 +65,13 @@ class MemoryProductStorageTest extends Specification {
 
      def "Throw a NotExistingProductException if we get the id which it doesn't exist"() {
         setup:
-        def id = -1
+        def uuid = UUID.randomUUID().toString()
 
-         when:
-        store.getByID(id)
+        when:
+        store.getByID(uuid)
 
-         then:
-        thrown NotExistingProductException
+        then:
+		thrown NotExistingProductException
     }
 
      def "get ID if it exist"() {
